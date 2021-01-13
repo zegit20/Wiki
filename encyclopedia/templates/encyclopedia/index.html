@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {encyclopedia}
+{% endblock %}
+
+{% block body %}
+    <h1>All Pages</h1>
+
+    {% for entry in entries %}
+      <li> <a href="/wiki/{{entry}}">{{entry}}</a></li>
+     
+    {% endfor %}
+   <!-- {% block form %} -->
+    <!-- <action ="/wiki/{{entry}}" > -->
+    <!-- {% endblock %} -->
+        <!-- <input class="search" type="text" name="q" action = "/wiki/{{entry}}"  placeholder="Search Encyclopedia"> -->
+    
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "encyclopedia/layout.html" %}
+
+
+{% block body %}
+    <h3>Add New Entry</h3>
+    {% if messages %}
+    <ul class="messages">
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %} 
+   <div class="textarea" style="color:green" >
+    <form  action="{% url 'encyclopedia:create' %}" method="post">
+       
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit">
+    </form>
+    </div>
+    
+{% endblock %}
+
